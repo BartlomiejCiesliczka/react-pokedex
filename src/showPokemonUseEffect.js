@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react"
 
-export function ShowPokemonAsync({pokeName}){
+export function ShowPokemonUseEffect({pokeName}){
 
   const [allPokemon, setAllPokemon] = useState([])
+  const PokeURL = `https://pokeapi.co/api/v2/pokemon/${pokeName}`
 
-const createPokemonObject = async (result) => {
-    let res = await fetch(`https://pokeapi.co/api/v2/pokemon/${result}`)
-    let data = await res.json()
-    setAllPokemon(currentList => [...currentList, data])
-}
-
-  useEffect(() =>{
-    createPokemonObject(pokeName)
+  useEffect(()=>{
+    fetch(PokeURL)
+    .then(response => response.json())
+    .then(data => {
+      setAllPokemon(currentList => [...currentList, data])
+    })
   }, [])
 
   return(
