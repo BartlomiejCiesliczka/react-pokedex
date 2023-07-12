@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main{
+  display: grid;
+  justify-content: center;
+  background: url('./pokemon.jpg') center/cover;
+  background-color: rgb(255, 135, 135);
+  height: 100vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokedex{
+  width: 750px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  background-color: white;
+  overflow-y:scroll;
+}
+.pokedex::-webkit-scrollbar {
+  display: none;
+}
+.title{
+  text-align: center;
+  margin: 30px 0px;
+  font-family: 'Roboto', sans-serif;
+  color: red;
+}
+.poke-list{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.poke-container{
+  margin: 0;
+  height: 220px;
+  width: 170px;
+  background-color: antiquewhite;
+  border: 1px solid;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+.img-container{
+  height: 170px;
+  width: 170px;
+}
+.poke-img{
+  height: 100%;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.poke-name{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poke-ID{
+  font-size: 14px;
+  text-align: center;
 }
