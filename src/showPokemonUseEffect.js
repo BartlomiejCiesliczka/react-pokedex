@@ -1,27 +1,30 @@
 import { useState, useEffect } from "react"
 
-export function ShowPokemonUseEffect({pokeName}){
+export function ShowPokemonUseEffect({Pokemon}){
 
-  const [allPokemon, setAllPokemon] = useState([])
-  const PokeURL = `https://pokeapi.co/api/v2/pokemon/${pokeName}`
+  const [pokemonData, setPokemonData] = useState([])
+  const [loading, setLoading] =useState(true)
+  const PokeURL = `https://pokeapi.co/api/v2/pokemon/${Pokemon}`
 
   useEffect(()=>{
+    setLoading(true)
     fetch(PokeURL)
     .then(response => response.json())
     .then(data => {
-      setAllPokemon(currentList => [...currentList, data])
+      setPokemonData(data)
+      setLoading(false)
     })
-  }, [])
+  }, [Pokemon])
+
+  if (loading) return ""
 
   return(
-    allPokemon.map(data =>
-      <div className="poke-container">
-        <div className="img-container">
-          <img className='poke-img' src={data.sprites.front_default}/>
-        </div>
-        <p className='poke-name'>{data.name}</p>
-        <p className='poke-ID'>#0{data.id}</p>
-      </div>  
+    <div className="poke-container">
+      <div className="img-container">
+        <img className='poke-img' src={pokemonData.sprites.front_default}/>
+      </div>
+      <p className='poke-name'>{pokemonData.name}</p>
+      <p className='poke-ID'>#0{pokemonData.id}</p>
+    </div> 
     )
-  )
 }
