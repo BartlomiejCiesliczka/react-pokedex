@@ -7,7 +7,7 @@
 .main{
   display: grid;
   justify-content: center;
-  background: url('./pokemon.jpg') center/cover;
+  background: url('.././assets/pokemon.jpg') center/cover;
   background-color: rgb(255, 135, 135);
   height: 100vh;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
+import Loading from 'react-simple-loading';
 
-export function ShowPokemonUseEffect({Pokemon}){
+export function ShowPokemon({Pokemon}){
 
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] =useState(true)
@@ -12,11 +13,19 @@ export function ShowPokemonUseEffect({Pokemon}){
     .then(response => response.json())
     .then(data => {
       setPokemonData(data)
-      setLoading(false)
+      setTimeout(() => {
+        setLoading(false);
+      }, "300");
     })
+    .catch(error => alert("Błąd ładowania danych", error));
   }, [Pokemon])
 
-  if (loading) return ""
+  
+  if (loading) return (
+    <div>
+      <Loading />
+    </div>
+  )
 
   return(
     <div className="poke-container">
