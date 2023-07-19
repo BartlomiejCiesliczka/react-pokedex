@@ -1,0 +1,29 @@
+.tile-container{
+  margin: 0;
+  height: 220px;
+  width: 170px;
+  background-color: antiquewhite;
+  border: 1px solid;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.tile-img-container{
+  height: 170px;
+  width: 170px;
+}
+.tile-img{
+  height: 100%;
+  width: 100%;
+}
+
+.tile-name{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.tile-ID{
+  font-size: 14px;
+  text-align: center;
+}

@@ -8,7 +8,6 @@
   display: grid;
   justify-content: center;
   background: url('.././assets/pokemon.jpg') center/cover;
-  background-color: rgb(255, 135, 135);
   height: 100vh;
 }
 .pokedex{
@@ -30,41 +29,13 @@
   margin: 30px 0px;
   font-family: 'Roboto', sans-serif;
   color: red;
+  cursor: pointer;
 }
-.poke-list{
+.list-of-pokemon{
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
 }
-.poke-container{
-  margin: 0;
-  height: 220px;
-  width: 170px;
-  background-color: antiquewhite;
-  border: 1px solid;
-  border-radius: 15px;
-  display: inline-block;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-.img-container{
-  height: 170px;
-  width: 170px;
-}
-.poke-img{
-  height: 100%;
-  width: 100%;
-}
 
-.poke-name{
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-.poke-ID{
-  font-size: 14px;
-  text-align: center;
-}
-.btn{
-  margin: 20px;
-}
+
+
