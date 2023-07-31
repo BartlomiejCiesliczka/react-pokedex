@@ -1,4 +1,4 @@
-.tile-container{
+.tile {
   margin: 0;
   height: 220px;
   width: 170px;
@@ -9,21 +9,21 @@
   cursor: pointer;
   margin-bottom: 20px;
 }
-.tile-img-container{
+.tile__imgContainer {
   height: 170px;
   width: 170px;
 }
-.tile-img{
+.tile__img {
   height: 100%;
   width: 100%;
 }
 
-.tile-name{
+.tile__name {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
-.tile-ID{
+.tile__ID {
   font-size: 14px;
   text-align: center;
 }

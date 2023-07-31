@@ -1,24 +1,22 @@
-.detail-container{
+.Pokemon-detail {
   width: 650px;
   height: 450px;
   margin: 50px;
   border: 2px solid black;
   border-radius: 20px;
 }
-.detail-name{
+.Pokemon-detail__name {
   text-align: center;
   font-weight: bold;
   text-transform: capitalize;
   font-size: 20px;
 }
-
-.detail-id{
+.Pokemon-detail__name--id {
   color: #797d83;
   font-weight: 400;
   font-size: 15px;
 }
-
-.detail-pokemon-data{
+.Pokemon-detail__grid {
   display: grid;
   grid-template-columns: repeat(2, 275px);
   grid-template-rows: 275px 120px;
@@ -26,39 +24,34 @@
   justify-content: center;
   align-content: center;
 }
-
-.detail-img-container{
+.Pokemon-detail__img-container {
   width: 100%;
   height: 100%;
 }
-
-.detail-img{
+.Pokemon-detail__img {
   height: 100%;
   width: 100%;
 }
-
-.stats-container{
+.Pokemon-detail__stats {
   display: flex;
 }
-
-ul{
+ul {
   list-style-type: none;
 }
-
-.stat-name,
-.stat-value{
+.Pokemon-detail__stat--name,
+.Pokemon-detail__stat--value {
   color: white;
   margin-top: 12px;
   padding: 3px 10px;
   border: 1px solid black;
-  border-radius: 5px; 
+  border-radius: 5px;
   text-align: center;
   background-color: #797d83;
 }
-.multiple-type{
-  display: flex;
+.Pokemon-detail__types--multiple-type,
+.Pokemon-detail__Weaknesses--multiple-type {
 }
-.property-title{
+.Pokemon-detail__Weaknesses--title {
   font-size: 20px;
   font-weight: bold;
 }
