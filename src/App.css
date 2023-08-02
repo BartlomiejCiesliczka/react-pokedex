@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-*{
+* {
   margin: 0;
-  
 }
-.main{
+main {
   display: grid;
   justify-content: center;
-  background: url('./pokemon.jpg') center/cover;
-  background-color: rgb(255, 135, 135);
+  background: url("./assets/pokemon.jpg") center/cover;
   height: 100vh;
 }
-.pokedex{
+.pokedex {
   width: 750px;
   align-items: center;
   display: flex;
@@ -20,47 +18,15 @@
   border-left: 2px solid;
   border-right: 2px solid;
   background-color: white;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 .pokedex::-webkit-scrollbar {
   display: none;
 }
-.title{
+.pokedex__title {
   text-align: center;
   margin: 30px 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: red;
-}
-.poke-list{
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-.poke-container{
-  margin: 0;
-  height: 220px;
-  width: 170px;
-  background-color: antiquewhite;
-  border: 1px solid;
-  border-radius: 15px;
-  display: inline-block;
   cursor: pointer;
-}
-.img-container{
-  height: 170px;
-  width: 170px;
-}
-.poke-img{
-  height: 100%;
-  width: 100%;
-}
-
-.poke-name{
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-.poke-ID{
-  font-size: 14px;
-  text-align: center;
 }
