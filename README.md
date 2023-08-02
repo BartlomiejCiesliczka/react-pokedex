@@ -6,4 +6,4 @@ In this app you can see every avalable pokemon at pokemon List also search pokem
 
 To Run this page click in link below:
 
-[a link](https://bartlomiejciesliczka.github.io/react-pokedex/)
+[Pokedex](https://bartlomiejciesliczka.github.io/react-pokedex/)
