@@ -1,7 +1,9 @@
 import "./Searchbar.css";
-import { useState, useEffect } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 import Loading from "react-simple-loading";
 import { PokemonDetailData } from "../PokemonDetail/PokemonDetailData";
+import { TextField } from "@mui/material";
 
 export function Searchbar({}) {
   const [pokemonData, setPokemonData] = useState([]);
@@ -47,13 +49,14 @@ export function Searchbar({}) {
           placeholder="Enter Pokemon or ID"
           type="search"
         />
+        {/* <TextField variant="filled" /> */}
         <button
           className="searchbar__button"
           onClick={() => {
             searchPokemon();
           }}
         >
-          img lupy
+          <SearchIcon sx={{ fontSize: 19, fill: "#8a8a8a" }} />
         </button>
       </div>
       {isFound}
@@ -61,7 +64,12 @@ export function Searchbar({}) {
         <Loading />
       ) : (
         exist && (
-          <PokemonDetailData key={pokemonData.id} pokemonData={pokemonData} />
+          <PokemonDetailData
+            key={pokemonData.id}
+            pokemonData={pokemonData}
+            setPokemonNameOrID={setPokemonNameOrID}
+            searchPokemon={searchPokemon}
+          />
         )
       )}
     </>

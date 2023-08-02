@@ -1,7 +1,22 @@
+.Detail-flex {
+  display: flex;
+  align-items: center;
+}
+
+.Detail__pagination {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Detail__pagination--next {
+}
+
 .Pokemon-detail {
   width: 650px;
   height: 450px;
-  margin: 50px;
+  margin: 50px 5px;
   border: 2px solid black;
   border-radius: 20px;
 }

@@ -5,7 +5,9 @@ import { ShowButton } from "../ShowButton/ShowButton";
 import "./ListLayout.css";
 
 export function ListLayout() {
-  const [APIUrl, setAPIUrl] = useState(`https://pokeapi.co/api/v2/pokemon`);
+  const [APIUrl, setAPIUrl] = useState(
+    `https://pokeapi.co/api/v2/pokemon?limit=21&offset=0`,
+  );
   const [pokeName, setPokeName] = useState([]);
   const [nextPage, setNextPage] = useState("");
   const [prevPage, setPrevPage] = useState("");
