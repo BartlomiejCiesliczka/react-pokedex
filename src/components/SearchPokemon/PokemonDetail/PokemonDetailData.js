@@ -9,10 +9,17 @@ export function PokemonDetailData({ pokemonData }) {
       </p>
       <div className="Pokemon-detail__grid">
         <div className="Pokemon-detail__img-container">
-          <img
-            className="Pokemon-detail__img"
-            src={pokemonData.sprites.other.dream_world.front_default}
-          />
+          {pokemonData.sprites.other.dream_world.front_default === null ? (
+            <img
+              className="Pokemon-detail__img"
+              src={pokemonData.sprites.front_default}
+            />
+          ) : (
+            <img
+              className="Pokemon-detail__img"
+              src={pokemonData.sprites.other.dream_world.front_default}
+            />
+          )}
         </div>
         <div className="Pokemon-detail__stats">
           <ul>
