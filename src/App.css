@@ -10,7 +10,7 @@ main {
   height: 100vh;
 }
 .pokedex {
-  width: 750px;
+  width: 1500px;
   align-items: center;
   display: flex;
   flex-direction: column;

@@ -49,7 +49,6 @@ export function Searchbar({}) {
           placeholder="Enter Pokemon or ID"
           type="search"
         />
-        {/* <TextField variant="filled" /> */}
         <button
           className="searchbar__button"
           onClick={() => {
@@ -74,4 +73,32 @@ export function Searchbar({}) {
       )}
     </>
   );
+}
+
+{
+  /* <TextField
+          value={pokemonNameOrID}
+          onChange={(e) => setPokemonNameOrID(e.target.value)}
+          onKeyDown={(e) => {
+            if (
+              e.key === "Enter" &&
+              pokemonNameOrID.length > 0 &&
+              pokemonNameOrID != 0
+            ) {
+              searchPokemon();
+            }
+          }}
+          label="Enter Pokemon or ID"
+          type="search"
+          variant="filled"
+          inputProps={{
+            style: {
+              height: "15px",
+              backgroundColor: "#ebebeb",
+              width: "250px",
+              borderTopLeftRadius: "20px",
+              borderBottomLeftRadius: "20px"
+            },
+          }}
+        /> */
 }
