@@ -1,11 +1,10 @@
 import Button from "@mui/material/Button";
 import "./Header.css";
 
-export function Header() {
+export function Header({ setPokemonType }) {
   const buttonStyle = {
     height: "100%",
     width: "180px",
-    borderRadius: "10px",
   };
   return (
     <header>
@@ -17,7 +16,10 @@ export function Header() {
           style={buttonStyle}
           variant="text"
           sx={{
-            color: "red",
+            color: "#ff4924",
+          }}
+          onClick={() => {
+            setPokemonType("fire");
           }}
         >
           Fire
@@ -26,7 +28,10 @@ export function Header() {
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "blue",
+            color: "#0051ba",
+          }}
+          onClick={() => {
+            setPokemonType("water");
           }}
         >
           Water
@@ -35,7 +40,10 @@ export function Header() {
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "green",
+            color: "#00ba1c",
+          }}
+          onClick={() => {
+            setPokemonType("grass");
           }}
         >
           Grass
@@ -44,16 +52,22 @@ export function Header() {
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "red",
+            color: "#f72fd3",
+          }}
+          onClick={() => {
+            setPokemonType("psychic");
           }}
         >
-          Physical
+          Psychic
         </Button>
         <Button
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "red",
+            color: "#5151bd",
+          }}
+          onClick={() => {
+            setPokemonType("flying");
           }}
         >
           Flying
@@ -62,19 +76,37 @@ export function Header() {
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "red",
+            color: "#facc61",
+          }}
+          onClick={() => {
+            setPokemonType("electric");
           }}
         >
-          Text
+          Electric
         </Button>
         <Button
           variant="text"
           style={buttonStyle}
           sx={{
-            color: "red",
+            color: "#7347ad",
+          }}
+          onClick={() => {
+            setPokemonType("poison");
           }}
         >
-          Text
+          Poison
+        </Button>
+        <Button
+          variant="text"
+          style={buttonStyle}
+          sx={{
+            color: "#7347ad",
+          }}
+          onClick={() => {
+            setPokemonType("");
+          }}
+        >
+          All
         </Button>
       </div>
     </header>

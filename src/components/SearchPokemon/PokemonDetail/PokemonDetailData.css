@@ -1,22 +1,6 @@
-.Detail-flex {
-  display: flex;
-  align-items: center;
-}
-
-.Detail__pagination {
-  padding: 10px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.Detail__pagination--next {
-}
-
 .Pokemon-detail {
   width: 650px;
-  height: 450px;
-  margin: 50px 5px;
+  height: 100%;
   border: 2px solid black;
   border-radius: 20px;
 }
@@ -25,6 +9,7 @@
   font-weight: bold;
   text-transform: capitalize;
   font-size: 20px;
+  margin-bottom: 50px;
 }
 .Pokemon-detail__name--id {
   color: #797d83;
@@ -69,4 +54,15 @@ ul {
 .Pokemon-detail__Weaknesses--title {
   font-size: 20px;
   font-weight: bold;
+}
+.dupa {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 900;
+  margin: 5px;
+  padding: 10px 40px;
+  background-color: #7575fa;
+  border-radius: 20px;
+}
+.Pokemon-detail__types {
 }

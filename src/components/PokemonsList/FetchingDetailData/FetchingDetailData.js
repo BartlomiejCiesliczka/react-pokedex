@@ -15,7 +15,7 @@ export function FetchingDetailData({ pokemon }) {
         setPokemonData(data);
         setLoading(false);
       })
-      .catch((error) => alert("Błąd ładowania danych ", error));
+      .catch((error) => alert("fetch - error ", error));
   }, [pokemon]);
 
   return (
