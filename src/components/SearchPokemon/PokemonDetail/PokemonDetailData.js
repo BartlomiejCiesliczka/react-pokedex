@@ -10,7 +10,12 @@ export function PokemonDetailData({
   return (
     <div className="Detail-flex">
       <button
-        onClick={() => {}}
+        onClick={() => {
+          setPokemonNameOrID(pokemonData.id - 1);
+          setTimeout(() => {
+            searchPokemon();
+          }, 500);
+        }}
         className="Detail__pagination Detail__pagination--previous"
       >
         <ArrowBackIosIcon sx={{ fontSize: 20 }} />
@@ -67,7 +72,9 @@ export function PokemonDetailData({
         </div>
       </div>
       <button
-        onClick={() => {}}
+        onClick={() => {
+          setPokemonNameOrID(pokemonData.id + 1);
+        }}
         className="Detail__pagination Detail__pagination--next"
       >
         <ArrowForwardIosIcon sx={{ fontSize: 20 }} />

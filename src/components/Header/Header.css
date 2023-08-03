@@ -1,0 +1,10 @@
+header {
+  height: 50px;
+  width: 100vw;
+  background-color: #ffff;
+  display: flex;
+  position: absolute;
+}
+.header__button {
+  margin: 0 auto;
+}
