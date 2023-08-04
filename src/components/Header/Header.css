@@ -4,6 +4,7 @@ header {
   background-color: #ffff;
   display: flex;
   position: absolute;
+  border-bottom: 2px solid;
 }
 .header__button {
   margin: 0 auto;

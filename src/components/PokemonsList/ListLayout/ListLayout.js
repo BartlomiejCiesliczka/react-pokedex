@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { FetchingDetailData } from "../FetchingDetailData/FetchingDetailData";
 import { Pagination } from "../Pagination/Pagination";
-import "./ListLayout.css";
 
 export function ListLayout({ pokemonType }) {
+  const ListLayout = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr 1fr",
+    gap: "40px",
+  };
+
   const [allPokemonAPI, setAllPokemonAPI] = useState(
-    `https://pokeapi.co/api/v2/pokemon?limit=21&offset=0`,
+    `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`,
   );
 
   const [pokeName, setPokeName] = useState([]);
@@ -24,11 +29,13 @@ export function ListLayout({ pokemonType }) {
           setNextPage(data.next);
           setPrevPage(data.previous);
           setPokeName(data.results.map((p) => p.name));
+
           setLoading(false);
         })
         .catch((error) => alert("ListLayout.js - Data loading error", error));
     }
   }, [allPokemonAPI, pokemonType]);
+  console.log(pokeName);
 
   useEffect(() => {
     if (pokemonType) {
@@ -52,7 +59,7 @@ export function ListLayout({ pokemonType }) {
         nextPage={nextPage}
         setAllPokemonAPI={setAllPokemonAPI}
       />
-      <div className="pokemons-list-layout">
+      <div style={ListLayout}>
         {pokeName.map((name) => (
           <FetchingDetailData pokemon={name} />
         ))}

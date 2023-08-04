@@ -47,11 +47,11 @@ export function PokemonDetailData({ pokemonData }) {
         <div className="Pokemon-detail__types">
           <p className="Pokemon-detail__types--title">Type</p>
           <div className="Pokemon-detail__types--multiple-type">
-            {pokemonData.types.map((number) => (
-              <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={1}>
+              {pokemonData.types.map((number) => (
                 <Chip label={number.type.name} style={type} />
-              </Stack>
-            ))}
+              ))}
+            </Stack>
           </div>
         </div>
         <div className="Pokemon-detail__Weaknesses">

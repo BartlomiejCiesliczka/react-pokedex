@@ -1,44 +1,61 @@
-import "./Searchbar.css";
 import SearchIcon from "@mui/icons-material/Search";
+import { IconButton, InputBase, Paper } from "@mui/material";
 
 export function Searchbar({
   searchNameOrID,
   setSearchNameOrID,
   searchPokemon,
 }) {
+  const SearchStyle = {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "50px",
+  };
+
   return (
-    <div className="searchbar">
-      <input
-        className="searchbar__input"
-        value={searchNameOrID}
-        onChange={(e) => setSearchNameOrID(e.target.value)}
-        onKeyDown={(e) => {
-          if (
-            e.key === "Enter" &&
-            searchNameOrID.length > 0 &&
-            searchNameOrID != 0 &&
-            searchNameOrID
-          ) {
-            searchPokemon();
-          }
-        }}
-        placeholder="Enter Pokemon or ID"
-        type="search"
-      />
-      <button
-        className="searchbar__button"
-        onClick={() => {
-          if (
-            searchNameOrID.length > 0 &&
-            searchNameOrID != 0 &&
-            searchNameOrID
-          ) {
-            searchPokemon();
-          }
+    <div style={SearchStyle}>
+      <Paper
+        sx={{
+          p: "4px 5px 4px 18px",
+          borderRadius: "25px",
+          boxShadow: "none",
+          backgroundColor: "#ebebeb",
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        <SearchIcon sx={{ fontSize: 19, fill: "#8a8a8a" }} />
-      </button>
+        <InputBase
+          placeholder="Search by name or number"
+          variant="outlined"
+          sx={{ width: "350px" }}
+          value={searchNameOrID}
+          onChange={(e) => setSearchNameOrID(e.target.value)}
+          onKeyDown={(e) => {
+            if (
+              e.key === "Enter" &&
+              searchNameOrID.length > 0 &&
+              searchNameOrID != 0 &&
+              searchNameOrID
+            ) {
+              searchPokemon();
+            }
+          }}
+        />
+        <IconButton
+          type="button"
+          onClick={() => {
+            if (
+              searchNameOrID.length > 0 &&
+              searchNameOrID != 0 &&
+              searchNameOrID
+            ) {
+              searchPokemon();
+            }
+          }}
+        >
+          <SearchIcon />
+        </IconButton>
+      </Paper>
     </div>
   );
 }
