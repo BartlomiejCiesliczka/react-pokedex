@@ -1,9 +1,8 @@
 header {
   height: 50px;
   width: 100vw;
-  background-color: #ffff;
+  background-color: #ffffff;
   display: flex;
-  position: absolute;
   border-bottom: 2px solid;
 }
 .header__button {
