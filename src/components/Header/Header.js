@@ -108,6 +108,15 @@ export function Header({ setPokemonType }) {
         >
           All
         </Button>
+        <Button
+          variant="text"
+          style={buttonStyle}
+          sx={{
+            color: "#7347ad",
+          }}
+        >
+          All
+        </Button>
       </div>
     </header>
   );
