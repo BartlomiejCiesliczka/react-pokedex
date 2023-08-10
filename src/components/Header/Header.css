@@ -1,10 +1,9 @@
-header {
+.pokemon-type {
   height: 50px;
-  width: 100vw;
   background-color: #ffff;
   display: flex;
-  position: absolute;
   border-bottom: 2px solid;
+  margin: 50px auto;
 }
 .header__button {
   margin: 0 auto;

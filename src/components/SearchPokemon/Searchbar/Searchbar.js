@@ -1,11 +1,7 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, InputBase, Paper } from "@mui/material";
 
-export function Searchbar({
-  searchNameOrID,
-  setSearchNameOrID,
-  searchPokemon,
-}) {
+export function Searchbar({}) {
   const SearchStyle = {
     display: "flex",
     justifyContent: "center",
@@ -29,31 +25,8 @@ export function Searchbar({
           placeholder="Search by name or number"
           variant="outlined"
           sx={{ width: "350px" }}
-          value={searchNameOrID}
-          onChange={(e) => setSearchNameOrID(e.target.value)}
-          onKeyDown={(e) => {
-            if (
-              e.key === "Enter" &&
-              searchNameOrID.length > 0 &&
-              searchNameOrID != 0 &&
-              searchNameOrID
-            ) {
-              searchPokemon();
-            }
-          }}
         />
-        <IconButton
-          type="button"
-          onClick={() => {
-            if (
-              searchNameOrID.length > 0 &&
-              searchNameOrID != 0 &&
-              searchNameOrID
-            ) {
-              searchPokemon();
-            }
-          }}
-        >
+        <IconButton type="button">
           <SearchIcon />
         </IconButton>
       </Paper>

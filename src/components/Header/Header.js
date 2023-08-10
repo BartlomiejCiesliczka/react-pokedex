@@ -7,7 +7,7 @@ export function Header({ setPokemonType }) {
     width: "180px",
   };
   return (
-    <header>
+    <header className="pokemon-type">
       <div className="header__img">
         <img src="" />
       </div>
@@ -104,15 +104,6 @@ export function Header({ setPokemonType }) {
           }}
           onClick={() => {
             setPokemonType("");
-          }}
-        >
-          All
-        </Button>
-        <Button
-          variant="text"
-          style={buttonStyle}
-          sx={{
-            color: "#7347ad",
           }}
         >
           All
