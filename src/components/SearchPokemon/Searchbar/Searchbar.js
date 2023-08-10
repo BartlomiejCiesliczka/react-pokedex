@@ -22,6 +22,7 @@ export function Searchbar({
           backgroundColor: "#ebebeb",
           display: "flex",
           alignItems: "center",
+          boxShadow: "0px 0px 20px 5px #00ffff",
         }}
       >
         <InputBase

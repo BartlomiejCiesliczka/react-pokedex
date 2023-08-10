@@ -29,7 +29,6 @@ export function ListLayout({ pokemonType }) {
           setNextPage(data.next);
           setPrevPage(data.previous);
           setPokeName(data.results.map((p) => p.name));
-
           setLoading(false);
         })
         .catch((error) => alert("ListLayout.js - Data loading error", error));
