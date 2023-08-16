@@ -59,6 +59,7 @@ export function Tile({ pokemonData }) {
     fontSize: "1.2rem",
     textTransform: "capitalize",
   };
+
   return (
     <Box sx={tile}>
       <Box sx={imgContainer}>
@@ -71,7 +72,7 @@ export function Tile({ pokemonData }) {
           <img style={img} src={pokemonData.sprites.front_default} />
         ) : (
           <div style={{ textAlign: "center", padding: "85px 0" }}>
-            Pic not found-asd
+            Pic not found
           </div>
         )}
       </Box>

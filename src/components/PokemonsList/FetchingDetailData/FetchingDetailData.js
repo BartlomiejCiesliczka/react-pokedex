@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Loading from "react-simple-loading";
 import { Tile } from "../Tile/Tile";
+import { Link } from "react-router-dom";
 
 export function FetchingDetailData({ pokemon }) {
   const [pokemonData, setPokemonData] = useState([]);
@@ -20,11 +21,11 @@ export function FetchingDetailData({ pokemon }) {
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <Tile key={pokemonData.id} pokemonData={pokemonData} />
-      )}
+      {pokemonData.id <= 1010 ? (
+        <Link to={`/pokedex/` + pokemonData.id.toString()}>
+          <Tile key={pokemonData.id} pokemonData={pokemonData} />
+        </Link>
+      ) : null}
     </>
   );
 }

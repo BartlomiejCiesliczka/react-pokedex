@@ -6,16 +6,32 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Pokedex } from "./Pokedex";
-import { Home } from "./Home";
-import { RootLayout } from "./RootLayout";
+import { PokedexLayout } from "./Layouts/PokedexLayout";
+import { Home } from "./Pages/Home";
+import { RootLayout } from "./Layouts/RootLayout";
+import { PokemonDetail, pokemonDetailLoader } from "./PokemonDetail";
+import { Pokedex } from "./Pages/Pokedex";
+import { TypesLayout } from "./Layouts/TypesLayout";
+import { TypeList, TypesLoader } from "./TypeList";
+import { TypeData, TypeDataLoader } from "./TypeData";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="pokedex" element={<Pokedex />} />
+        <Route path="pokedex" element={<PokedexLayout />}>
+          <Route index element={<Pokedex />} />
+          <Route
+            path=":id"
+            element={<PokemonDetail />}
+            loader={pokemonDetailLoader}
+          />
+        </Route>
+        <Route path="type" element={<TypesLayout />}>
+          <Route index element={<TypeList />} loader={TypesLoader} />
+          <Route path=":type" element={<TypeData />} loader={TypeDataLoader} />
+        </Route>
       </Route>,
     ),
   );

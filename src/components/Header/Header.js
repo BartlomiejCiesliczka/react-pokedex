@@ -1,20 +1,27 @@
 import Button from "@mui/material/Button";
-import "./Header.css";
 
 export function Header({ setPokemonType }) {
+  const headerStyle = {
+    height: "50px",
+    width: "100vw",
+    backgroundColor: "#ffffff",
+    display: "flex",
+    borderBottom: "2px solid",
+  };
+
+  const buttonLayoutStyle = {
+    margin: "0 auto",
+  };
+
   const buttonStyle = {
     height: "100%",
     width: "180px",
   };
   return (
-    <header>
-      <div className="header__img">
-        <img src="" />
-      </div>
-      <div className="header__button">
+    <header style={headerStyle}>
+      <div style={buttonLayoutStyle}>
         <Button
           style={buttonStyle}
-          variant="text"
           sx={{
             color: "#ff4924",
           }}
@@ -25,7 +32,6 @@ export function Header({ setPokemonType }) {
           Fire
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#0051ba",
@@ -37,7 +43,6 @@ export function Header({ setPokemonType }) {
           Water
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#00ba1c",
@@ -49,7 +54,6 @@ export function Header({ setPokemonType }) {
           Grass
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#f72fd3",
@@ -61,7 +65,6 @@ export function Header({ setPokemonType }) {
           Psychic
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#5151bd",
@@ -73,7 +76,6 @@ export function Header({ setPokemonType }) {
           Flying
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#facc61",
@@ -85,7 +87,6 @@ export function Header({ setPokemonType }) {
           Electric
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#7347ad",
@@ -97,7 +98,6 @@ export function Header({ setPokemonType }) {
           Poison
         </Button>
         <Button
-          variant="text"
           style={buttonStyle}
           sx={{
             color: "#7347ad",

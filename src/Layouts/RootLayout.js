@@ -7,13 +7,18 @@ export function RootLayout() {
     justifyContent: "center",
     margin: "0 auto",
     backgroundColor: "#ffff",
-    padding: "0 280px",
     height: "60px",
+    width: "100vw",
+    position: "absolute",
   };
 
   const navTitle = {
-    marginRight: "auto",
+    margin: "0 auto 0 280px",
     alignSelf: "center",
+  };
+  const creditsStyle = {
+    fontSize: "12px",
+    color: "#acacac",
   };
 
   const navButton = {
@@ -25,7 +30,10 @@ export function RootLayout() {
   return (
     <>
       <nav style={rootLayoutNav}>
-        <h1 style={navTitle}>Pokedex</h1>
+        <h1 style={navTitle}>
+          POKEDEX
+          <span style={creditsStyle}> By Bartłomiej Cieśliczka</span>
+        </h1>
 
         <NavLink to="/">
           <Button style={navButton}>Home</Button>
@@ -33,13 +41,20 @@ export function RootLayout() {
         <NavLink to="pokedex">
           <Button style={navButton}>Pokedex</Button>
         </NavLink>
+        <NavLink to="type">
+          <Button style={navButton}>Types</Button>
+        </NavLink>
         <a href="https://github.com/BartlomiejCiesliczka" target="_blank">
-          <Button style={navButton}>My Github</Button>
+          <Button style={navButton} sx={{ pr: 280 }}>
+            My Github
+          </Button>
         </a>
       </nav>
 
       <main>
-        <Outlet />
+        <div className="pokedex">
+          <Outlet />
+        </div>
       </main>
     </>
   );
