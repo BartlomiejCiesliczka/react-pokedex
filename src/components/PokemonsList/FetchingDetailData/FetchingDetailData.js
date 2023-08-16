@@ -22,7 +22,7 @@ export function FetchingDetailData({ pokemon }) {
   return (
     <>
       {pokemonData.id <= 1010 ? (
-        <Link to={`/pokedex/` + pokemonData.id.toString()}>
+        <Link to={`/react-pokedex/pokedex/` + pokemonData.id.toString()}>
           <Tile key={pokemonData.id} pokemonData={pokemonData} />
         </Link>
       ) : null}
