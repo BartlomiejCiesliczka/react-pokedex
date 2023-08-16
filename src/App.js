@@ -18,7 +18,7 @@ import { TypeData, TypeDataLoader } from "./TypeData";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
+      <Route path="/react-pokedex" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path="pokedex" element={<PokedexLayout />}>
           <Route index element={<Pokedex />} />
