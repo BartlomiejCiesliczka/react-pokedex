@@ -35,7 +35,7 @@ export function RootLayout() {
           <span style={creditsStyle}> By Bartłomiej Cieśliczka</span>
         </h1>
 
-        <NavLink to="/">
+        <NavLink to="/react-pokedex">
           <Button style={navButton}>Home</Button>
         </NavLink>
         <NavLink to="pokedex">
