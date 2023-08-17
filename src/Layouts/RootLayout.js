@@ -25,6 +25,9 @@ export function RootLayout() {
     padding: "10px 0",
     width: "160px",
     height: "100%",
+    "&:focus": {
+      color: "#ff0000",
+    },
   };
 
   return (
@@ -36,13 +39,13 @@ export function RootLayout() {
         </h1>
 
         <NavLink to="/react-pokedex">
-          <Button style={navButton}>Home</Button>
+          <Button sx={navButton}>Home</Button>
         </NavLink>
         <NavLink to="pokedex">
-          <Button style={navButton}>Pokedex</Button>
+          <Button sx={navButton}>Pokedex</Button>
         </NavLink>
         <NavLink to="type">
-          <Button style={navButton}>Types</Button>
+          <Button sx={navButton}>Types</Button>
         </NavLink>
         <a href="https://github.com/BartlomiejCiesliczka" target="_blank">
           <Button style={navButton} sx={{ pr: 280 }}>

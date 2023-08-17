@@ -125,7 +125,7 @@ export function PokemonDetail() {
 export const pokemonDetailLoader = async ({ params }) => {
   const { id } = params;
 
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon/" + id);
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/` + id);
 
   return res.json();
 };

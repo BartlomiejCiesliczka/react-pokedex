@@ -15,7 +15,8 @@ export function Searchbar() {
 
   function handleSearch() {
     if (pokemonNameOrID.trim().length !== 0) {
-      navigate(pokemonNameOrID.toString());
+      navigate(`/react-pokedex/pokedex/pokemon/` + pokemonNameOrID.toString());
+      setPokemonNameOrID("");
     }
   }
 
