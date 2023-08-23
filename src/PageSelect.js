@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, useLoaderData, useNavigate } from "react-router-dom";
-import { FetchingDetailData } from "./components/PokemonsList/FetchingDetailData/FetchingDetailData";
+import {
+  useParams,
+  useLoaderData,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { Pagination } from "@mui/material";
+import { FetchingDetailData } from "./components/PokemonsList/FetchingDetailData/FetchingDetailData";
+import Loading from "react-simple-loading";
 
 export function PageSelect() {
   const ListLayout = {
@@ -13,12 +19,12 @@ export function PageSelect() {
   const PaginationStyle = {
     marginBottom: "30px",
   };
-  let { number } = useParams();
+  const { number } = useParams();
   const Data = useLoaderData();
   const navigate = useNavigate();
-  const [page, setPage] = useState(number);
-
+  const location = useLocation();
   const [pokeName, setPokeName] = useState([]);
+
   useEffect(() => {
     setPokeName(Data.results.map((p) => p.name));
     console.log(number);
@@ -28,11 +34,17 @@ export function PageSelect() {
     navigate(`/react-pokedex/pokedex/list/` + p.toString());
   };
 
+  let currentLink = [];
+  const crumbs = location.pathname.split("/").map((crumb) => {
+    currentLink.push(crumb);
+  });
+  let pageNumber = currentLink[currentLink.length - 1];
+
   return (
     <>
       <Pagination
         shape="rounded"
-        defaultPage={6}
+        defaultPage={Number(pageNumber)}
         siblingCount={2}
         count={51}
         onChange={handleChange}
