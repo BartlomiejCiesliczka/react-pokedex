@@ -1,5 +1,5 @@
 import { useParams, useLoaderData } from "react-router-dom";
-import { FetchingDetailData } from "./components/PokemonsList/FetchingDetailData/FetchingDetailData";
+import { FetchingDetailData } from "../PokemonsList/FetchingDetailData/FetchingDetailData";
 
 export function TypeData() {
   const { type } = useParams();
@@ -11,12 +11,6 @@ export function TypeData() {
     gap: "40px",
     marginBottom: "40px",
     marginTop: "60px",
-  };
-  const damageLayout = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    margin: "30px",
-    columnGap: "500px",
   };
 
   return (

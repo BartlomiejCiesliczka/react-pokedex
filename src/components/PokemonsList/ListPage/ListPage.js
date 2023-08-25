@@ -5,10 +5,11 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
-import { Pagination } from "@mui/material";
-import { FetchingDetailData } from "./components/PokemonsList/FetchingDetailData/FetchingDetailData";
 
-export function PageSelect() {
+import { Pagination } from "@mui/material";
+import { FetchingDetailData } from "../FetchingDetailData/FetchingDetailData";
+
+export function ListPage() {
   const ListLayout = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",

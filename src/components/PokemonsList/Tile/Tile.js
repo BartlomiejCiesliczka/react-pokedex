@@ -25,22 +25,24 @@ export function Tile({ pokemonData }) {
   };
 
   const tile = {
-    boxShadow: "0px 0px 10px 2px #FBD743",
+    /*     boxShadow: "0px 0px 10px 2px #FBD743", */
     cursor: "pointer",
     borderRadius: "25px",
+
     "&:hover": {
-      boxShadow: "0px 0px 20px 5px #FF1F1F",
+      opacity: 0.85,
     },
   };
   const imgContainer = {
     height: "270px",
     width: "270px",
-    border: "1px solid",
+    border: "1px solid black",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderTopLeftRadius: "25px",
     borderTopRightRadius: "25px",
+    background: POKEMON_TYPE_COLORS[pokemonData.types[0].type.name],
   };
   const img = {
     height: "70%",
@@ -48,7 +50,7 @@ export function Tile({ pokemonData }) {
   };
   const dataContainer = {
     backgroundColor: "#7b7b7b",
-    border: "1px solid",
+    border: "1px solid black",
     borderTop: "none",
     borderBottomLeftRadius: "25px",
     borderBottomRightRadius: "25px",
