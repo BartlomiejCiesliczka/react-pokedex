@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);*{margin:0}main{background-color:#8f8f8f;height:100vh}.pokedex{align-content:center;align-items:center;background-color:#c7c7c7;border-left:2px solid;border-right:2px solid;display:flex;flex-direction:column;height:calc(100vh - 60px);margin:0 auto;overflow-y:scroll;padding-top:60px;width:1500px}.pokedex::-webkit-scrollbar{display:none}a,a:link,a:visited{outline-color:#000;text-decoration:none}ul{list-style-type:none}
+/*# sourceMappingURL=main.036ce505.css.map*/
