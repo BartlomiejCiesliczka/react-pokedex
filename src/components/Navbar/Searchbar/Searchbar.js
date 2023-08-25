@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Searchbar() {
   const SearchStyle = {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "50px",
+    marginRight: "150px",
   };
 
   const [pokemonNameOrID, setPokemonNameOrID] = useState();
@@ -24,7 +22,6 @@ export function Searchbar() {
     <div style={SearchStyle}>
       <Paper
         sx={{
-          marginTop: "60px",
           p: "4px 5px 4px 18px",
           borderRadius: "25px",
           boxShadow: "none",
@@ -34,7 +31,7 @@ export function Searchbar() {
         }}
       >
         <InputBase
-          placeholder="Search by name or number"
+          placeholder="Search Pokemon by name or number"
           variant="outlined"
           sx={{ width: "350px" }}
           value={pokemonNameOrID}

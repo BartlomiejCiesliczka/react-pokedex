@@ -13,11 +13,11 @@ export function TypeList() {
   const buttonStyle = {
     width: "200px",
     height: "50px",
-    boxShadow: "0px 0px 20px 5px #00ffff",
+    boxShadow: "0px 0px 10px 2px #FBD743",
     color: "#000000",
     border: "1px solid",
     "&:hover": {
-      boxShadow: "0px 0px 20px 5px #b103fc",
+      boxShadow: "0px 0px 20px 5px #FF1F1F",
       border: "1px solid black",
     },
   };

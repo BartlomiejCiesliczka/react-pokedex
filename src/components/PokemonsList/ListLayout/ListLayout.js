@@ -10,6 +10,7 @@ export function ListLayout({}) {
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     gap: "40px",
     marginBottom: "40px",
+    marginTop: "60px",
   };
   const PaginationStyle = {
     marginBottom: "30px",
@@ -41,6 +42,11 @@ export function ListLayout({}) {
 
   return (
     <>
+      <div style={ListLayout}>
+        {pokeName.map((name) => (
+          <FetchingDetailData key={name} pokemon={name} />
+        ))}
+      </div>
       <Pagination
         shape="rounded"
         siblingCount={2}
@@ -48,11 +54,6 @@ export function ListLayout({}) {
         onChange={handleChange}
         sx={PaginationStyle}
       ></Pagination>
-      <div style={ListLayout}>
-        {pokeName.map((name) => (
-          <FetchingDetailData key={name} pokemon={name} />
-        ))}
-      </div>
     </>
   );
 }

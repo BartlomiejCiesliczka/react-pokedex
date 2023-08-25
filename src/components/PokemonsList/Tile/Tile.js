@@ -3,23 +3,42 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
 export function Tile({ pokemonData }) {
+  const POKEMON_TYPE_COLORS = {
+    normal: "#A8A878",
+    fighting: "#C03028",
+    flying: "#A890F0",
+    poison: "#A040A0",
+    ground: "#E0C068",
+    rock: "#B8A038",
+    bug: "#A8B820",
+    ghost: "#705898",
+    steel: "#B8B8D0",
+    fire: "#FA6C6C",
+    water: "#6890F0",
+    grass: "#48CFB2",
+    electric: "#FFCE4B",
+    psychic: "#F85888",
+    ice: "#98D8D8",
+    dragon: "#7038F8",
+    dark: "#705848",
+    fairy: "#EE99AC",
+  };
+
   const tile = {
-    boxShadow: "0px 0px 20px 5px #00ffff",
+    boxShadow: "0px 0px 10px 2px #FBD743",
     cursor: "pointer",
     borderRadius: "25px",
     "&:hover": {
-      boxShadow: "0px 0px 20px 5px #b103fc",
+      boxShadow: "0px 0px 20px 5px #FF1F1F",
     },
   };
   const imgContainer = {
     height: "270px",
     width: "270px",
     border: "1px solid",
-
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#b8b8b8",
     borderTopLeftRadius: "25px",
     borderTopRightRadius: "25px",
   };
@@ -59,6 +78,11 @@ export function Tile({ pokemonData }) {
     fontSize: "1.2rem",
     textTransform: "capitalize",
   };
+  const PNF = {
+    textAlign: "center",
+    padding: "85px 0",
+  };
+  /* {pokemonData.types[0].type.name} */
 
   return (
     <Box sx={tile}>
@@ -71,9 +95,7 @@ export function Tile({ pokemonData }) {
         ) : pokemonData.sprites.front_default ? (
           <img style={img} src={pokemonData.sprites.front_default} />
         ) : (
-          <div style={{ textAlign: "center", padding: "85px 0" }}>
-            Pic not found
-          </div>
+          <div style={PNF}>Pic not found</div>
         )}
       </Box>
       <Box sx={dataContainer}>

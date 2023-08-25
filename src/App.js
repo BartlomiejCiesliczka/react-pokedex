@@ -12,7 +12,7 @@ import { RootLayout } from "./Layouts/RootLayout";
 import { PokemonDetail, pokemonDetailLoader } from "./PokemonDetail";
 import { Pokedex } from "./Pages/Pokedex";
 import { TypesLayout } from "./Layouts/TypesLayout";
-import { TypeList, TypesLoader } from "./TypeList";
+import { TypeList, TypesLoader } from "./Pages/TypeList";
 import { TypeData, TypeDataLoader } from "./TypeData";
 import { PokemonLayout } from "./Layouts/PokemonLayout";
 import { PaginationLayout } from "./Layouts/PaginationLayout";

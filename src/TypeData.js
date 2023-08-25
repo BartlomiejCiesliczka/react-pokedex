@@ -9,6 +9,8 @@ export function TypeData() {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     gap: "40px",
+    marginBottom: "40px",
+    marginTop: "60px",
   };
   const damageLayout = {
     display: "grid",
@@ -19,26 +21,6 @@ export function TypeData() {
 
   return (
     <>
-      <h1>{type}</h1>
-      <div style={damageLayout}>
-        <ul>
-          <p>strong at:</p>
-          {typeData.damage_relations.double_damage_to
-            .map((data) => data.name)
-            .map((goodAt) => (
-              <li>{goodAt}</li>
-            ))}
-        </ul>
-
-        <ul>
-          <p>weak at:</p>
-          {typeData.damage_relations.double_damage_from
-            .map((data) => data.name)
-            .map((badAt) => (
-              <li>{badAt}</li>
-            ))}
-        </ul>
-      </div>
       <div style={ListLayout}>
         {typeData.pokemon
           .map((data) => data.pokemon.name)

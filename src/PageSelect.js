@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import { FetchingDetailData } from "./components/PokemonsList/FetchingDetailData/FetchingDetailData";
-import Loading from "react-simple-loading";
 
 export function PageSelect() {
   const ListLayout = {
@@ -15,6 +14,7 @@ export function PageSelect() {
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     gap: "40px",
     marginBottom: "40px",
+    marginTop: "60px",
   };
   const PaginationStyle = {
     marginBottom: "30px",
@@ -42,6 +42,11 @@ export function PageSelect() {
 
   return (
     <>
+      <div style={ListLayout}>
+        {pokeName.map((name) => (
+          <FetchingDetailData key={name} pokemon={name} />
+        ))}
+      </div>
       <Pagination
         shape="rounded"
         defaultPage={Number(pageNumber)}
@@ -50,11 +55,6 @@ export function PageSelect() {
         onChange={handleChange}
         sx={PaginationStyle}
       ></Pagination>
-      <div style={ListLayout}>
-        {pokeName.map((name) => (
-          <FetchingDetailData key={name} pokemon={name} />
-        ))}
-      </div>
     </>
   );
 }
