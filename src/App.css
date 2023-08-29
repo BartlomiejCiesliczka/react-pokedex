@@ -14,7 +14,6 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  align-content: center;
   border-left: 2px solid;
   border-right: 2px solid;
   background-color: #c7c7c7;
@@ -24,17 +23,8 @@ main {
 .pokedex::-webkit-scrollbar {
   display: none;
 }
-a {
-  text-decoration: none;
-  outline-color: black;
-}
-a:visited {
-  text-decoration: none;
-  outline-color: black;
-}
 a:link {
   text-decoration: none;
-  outline-color: black;
 }
 ul {
   list-style-type: none;

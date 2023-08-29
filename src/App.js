@@ -1,5 +1,4 @@
 import "./App.css";
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -23,8 +22,21 @@ import {
   ListLoader,
   ListPage,
 } from "./components/PokemonsList/ListPage/ListPage";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 
 function App() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="react-pokedex" element={<RootLayout />}>
@@ -50,7 +62,11 @@ function App() {
     ),
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
