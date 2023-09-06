@@ -22,11 +22,7 @@ import {
   ListLoader,
   ListPage,
 } from "./components/PokemonsList/ListPage/ListPage";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   const client = new QueryClient({

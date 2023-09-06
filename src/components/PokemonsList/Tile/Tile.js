@@ -84,7 +84,6 @@ export function Tile({ pokemonData }) {
     textAlign: "center",
     padding: "85px 0",
   };
-  /* {pokemonData.types[0].type.name} */
 
   return (
     <Box sx={tile}>

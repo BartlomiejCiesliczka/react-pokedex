@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import { useParams, useLoaderData } from "react-router-dom";
 import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { BarChart, Bar, YAxis, XAxis, CartesianGrid, Tooltip } from "recharts";
+import { BarChart, Bar, YAxis, XAxis, Tooltip } from "recharts";
 
 export function PokemonDetail() {
   const nameStyle = {
@@ -21,7 +21,6 @@ export function PokemonDetail() {
   const imgContainerStyle = {
     height: "400px",
     width: "400px",
-    /* marginLeft: "100px", */
   };
   const imgStyle = {
     height: "100%",
@@ -39,11 +38,13 @@ export function PokemonDetail() {
   const { id } = useParams();
   const pokemon = useLoaderData();
 
-  const { data: species, isLoading } = useQuery(["species"], () => {
-    return Axios.get(`https://pokeapi.co/api/v2/pokemon-species/` + id).then(
-      (res) => res.data,
-    );
-  });
+  const { data: species, isLoading } = useQuery(
+    ["species", id],
+    () => {
+      return Axios.get(pokemon.species.url).then((res) => res.data);
+    } /* ,
+    { refetchInterval: 1000 }, */, //solving problem with nofetched data with query, i dont think it is best idea
+  );
 
   const heightInMeters = (value) => {
     return (value / 10).toFixed(2);

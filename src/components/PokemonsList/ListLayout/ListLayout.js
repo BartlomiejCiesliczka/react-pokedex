@@ -2,6 +2,7 @@ import { Pagination } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FetchingDetailData } from "../FetchingDetailData/FetchingDetailData";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export function ListLayout({}) {
   //style
@@ -18,6 +19,7 @@ export function ListLayout({}) {
 
   //useState hooks
   const [pokeName, setPokeName] = useState([]);
+  const [loading, setLoading] = useState();
 
   //Pokemon Data API
   const pokemonAPI = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`;
@@ -32,10 +34,12 @@ export function ListLayout({}) {
 
   //useEffect hooks
   useEffect(() => {
+    setLoading(false);
     fetch(pokemonAPI)
       .then((response) => response.json())
       .then((data) => {
         setPokeName(data.results.map((p) => p.name));
+        setLoading(true);
       })
       .catch((error) => alert("ListLayout.js - Data loading error", error));
   }, []);
@@ -43,9 +47,13 @@ export function ListLayout({}) {
   return (
     <>
       <div style={ListLayout}>
-        {pokeName.map((name) => (
-          <FetchingDetailData key={name} pokemon={name} />
-        ))}
+        {loading ? (
+          pokeName.map((name) => (
+            <FetchingDetailData key={name} pokemon={name} />
+          ))
+        ) : (
+          <CircularProgress />
+        )}
       </div>
       <Pagination
         shape="rounded"

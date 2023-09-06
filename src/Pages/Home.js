@@ -19,7 +19,7 @@ export function Home() {
       </Typography>
       <Typography variant="subtitle1" gutterBottom>
         The main goal with this project was to learn React and library like MUI,
-        Router, Redux etc.
+        Router, Redux, Query etc.
       </Typography>
     </Box>
   );
