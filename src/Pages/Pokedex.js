@@ -1,9 +1,8 @@
-import { ListLayout } from "../components/PokemonsList/ListLayout/ListLayout";
-
-export function Pokedex({ pokemonType }) {
+import { ListFetcher } from "../components/PokemonsList/ListLayout/ListFetcher";
+export function Pokedex({}) {
   return (
     <>
-      <ListLayout pokemonType={pokemonType} />
+      <ListFetcher />
     </>
   );
 }

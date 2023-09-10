@@ -25,7 +25,6 @@ export function Tile({ pokemonData }) {
   };
 
   const tile = {
-    /*     boxShadow: "0px 0px 10px 2px #FBD743", */
     cursor: "pointer",
     borderRadius: "25px",
 

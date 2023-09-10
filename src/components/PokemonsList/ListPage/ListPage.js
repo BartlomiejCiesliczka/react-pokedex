@@ -5,9 +5,9 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
-
 import { Pagination } from "@mui/material";
 import { FetchingDetailData } from "../FetchingDetailData/FetchingDetailData";
+import { usePokeNameData } from "../../../hooks/QueryHooks/usePokeNameData";
 
 export function ListPage() {
   const ListLayout = {
@@ -28,7 +28,6 @@ export function ListPage() {
 
   useEffect(() => {
     setPokeName(Data.results.map((p) => p.name));
-    console.log(number);
   }, [number]);
 
   const handleChange = (e, p) => {

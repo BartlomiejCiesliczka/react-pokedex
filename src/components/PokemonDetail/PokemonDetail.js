@@ -38,13 +38,9 @@ export function PokemonDetail() {
   const { id } = useParams();
   const pokemon = useLoaderData();
 
-  const { data: species, isLoading } = useQuery(
-    ["species", id],
-    () => {
-      return Axios.get(pokemon.species.url).then((res) => res.data);
-    } /* ,
-    { refetchInterval: 1000 }, */, //solving problem with nofetched data with query, i dont think it is best idea
-  );
+  const { data: species, isLoading } = useQuery(["species", id], () => {
+    return Axios.get(pokemon.species.url).then((res) => res.data);
+  });
 
   const heightInMeters = (value) => {
     return (value / 10).toFixed(2);
