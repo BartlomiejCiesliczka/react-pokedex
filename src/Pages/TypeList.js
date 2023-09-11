@@ -1,28 +1,10 @@
+import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { useParams, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { PokemonTypeColors } from "../const/TypeColor";
 
 export function TypeList() {
-  const POKEMON_TYPE_COLORS = {
-    normal: "#A8A878",
-    fighting: "#C03028",
-    flying: "#A890F0",
-    poison: "#A040A0",
-    ground: "#E0C068",
-    rock: "#B8A038",
-    bug: "#A8B820",
-    ghost: "#705898",
-    steel: "#B8B8D0",
-    fire: "#FA6C6C",
-    water: "#6890F0",
-    grass: "#48CFB2",
-    electric: "#FFCE4B",
-    psychic: "#F85888",
-    ice: "#98D8D8",
-    dragon: "#7038F8",
-    dark: "#705848",
-    fairy: "#EE99AC",
-  };
   const ListLayout = {
     paddingTop: "90px",
     display: "grid",
@@ -48,13 +30,15 @@ export function TypeList() {
       {types.results.map((type) =>
         type.name === "unknown" || type.name === "shadow" ? null : (
           <Link to={type.name.toString()}>
-            <Button
-              variant="outlined"
-              sx={buttonStyle}
-              style={{ background: POKEMON_TYPE_COLORS[type.name] }}
-            >
-              {type.name}
-            </Button>
+            <Paper elevation={5}>
+              <Button
+                variant="outlined"
+                sx={buttonStyle}
+                style={{ background: PokemonTypeColors[type.name] }}
+              >
+                {type.name}
+              </Button>
+            </Paper>
           </Link>
         ),
       )}

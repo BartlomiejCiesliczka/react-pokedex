@@ -5,7 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { usePokeNameData } from "../../../hooks/QueryHooks/usePokeNameData";
 
 //style
-const aaa = {
+const layout = {
   display: "grid",
   gridTemplateColumns: "1fr 1fr 1fr 1fr",
   gap: "40px",
@@ -33,7 +33,7 @@ export function ListFetcher({}) {
 
   return (
     <>
-      <div style={aaa}>
+      <div style={layout}>
         {isLoading ? (
           <CircularProgress />
         ) : (

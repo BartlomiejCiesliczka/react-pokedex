@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import { FetchingDetailData } from "../FetchingDetailData/FetchingDetailData";
-import { usePokeNameData } from "../../../hooks/QueryHooks/usePokeNameData";
 
 export function ListPage() {
   const ListLayout = {

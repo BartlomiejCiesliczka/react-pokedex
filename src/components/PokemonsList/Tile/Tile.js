@@ -1,37 +1,10 @@
+import { Paper } from "@mui/material";
 import Box from "@mui/material/Box";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import { PokemonTypeColors } from "../../../const/TypeColor";
 
 export function Tile({ pokemonData }) {
-  const POKEMON_TYPE_COLORS = {
-    normal: "#A8A878",
-    fighting: "#C03028",
-    flying: "#A890F0",
-    poison: "#A040A0",
-    ground: "#E0C068",
-    rock: "#B8A038",
-    bug: "#A8B820",
-    ghost: "#705898",
-    steel: "#B8B8D0",
-    fire: "#FA6C6C",
-    water: "#6890F0",
-    grass: "#48CFB2",
-    electric: "#FFCE4B",
-    psychic: "#F85888",
-    ice: "#98D8D8",
-    dragon: "#7038F8",
-    dark: "#705848",
-    fairy: "#EE99AC",
-  };
-
-  const tile = {
-    cursor: "pointer",
-    borderRadius: "25px",
-
-    "&:hover": {
-      opacity: 0.85,
-    },
-  };
   const imgContainer = {
     height: "270px",
     width: "270px",
@@ -41,7 +14,7 @@ export function Tile({ pokemonData }) {
     alignItems: "center",
     borderTopLeftRadius: "25px",
     borderTopRightRadius: "25px",
-    background: POKEMON_TYPE_COLORS[pokemonData.types[0].type.name],
+    background: PokemonTypeColors[pokemonData.types[0].type.name],
   };
   const img = {
     height: "70%",
@@ -79,13 +52,21 @@ export function Tile({ pokemonData }) {
     fontSize: "1.2rem",
     textTransform: "capitalize",
   };
-  const PNF = {
+  const imgError = {
     textAlign: "center",
     padding: "85px 0",
   };
 
   return (
-    <Box sx={tile}>
+    <Paper
+      elevation={10}
+      sx={{
+        borderRadius: "25px",
+        "&:hover": {
+          opacity: 0.85,
+        },
+      }}
+    >
       <Box sx={imgContainer}>
         {pokemonData.sprites.other.dream_world.front_default ? (
           <img
@@ -95,7 +76,7 @@ export function Tile({ pokemonData }) {
         ) : pokemonData.sprites.front_default ? (
           <img style={img} src={pokemonData.sprites.front_default} />
         ) : (
-          <div style={PNF}>Pic not found</div>
+          <div style={imgError}>Pic not found</div>
         )}
       </Box>
       <Box sx={dataContainer}>
@@ -107,6 +88,6 @@ export function Tile({ pokemonData }) {
           ))}
         </Stack>
       </Box>
-    </Box>
+    </Paper>
   );
 }
