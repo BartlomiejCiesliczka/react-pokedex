@@ -28,6 +28,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMemo, useState, createContext } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
+
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 function App() {
