@@ -3,9 +3,9 @@
 * {
   margin: 0;
 }
-main {
+/* main {
   background-color: #8f8f8f;
-}
+} */
 .pokedex {
   margin: 0 auto;
   height: 100vh;
@@ -15,7 +15,7 @@ main {
   flex-direction: column;
   border-left: 2px solid;
   border-right: 2px solid;
-  background-color: #c7c7c7;
+  /* background-color: #c7c7c7; */
   overflow-y: scroll;
   padding-top: 60px;
 }
@@ -27,4 +27,8 @@ a:link {
 }
 ul {
   list-style-type: none;
+}
+
+:root {
+  --navbar-color: #ff1f1f;
 }

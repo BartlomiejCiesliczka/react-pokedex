@@ -1,40 +1,18 @@
 import CircularProgress from "@mui/material/CircularProgress";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useParams, useLoaderData } from "react-router-dom";
 import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { BarChart, Bar, YAxis, XAxis, Tooltip } from "recharts";
 
-export function PokemonDetail() {
-  const nameStyle = {
-    textAlign: "center",
-    fontWeight: "bold",
-    textTransform: "capitalize",
-    fontSize: "50px",
-    margin: "20px 0 30px",
-  };
-  const idStyle = {
-    color: "#797d83",
-    fontWeight: "400",
-    fontSize: "20px",
-  };
-  const imgContainerStyle = {
-    height: "400px",
-    width: "400px",
-  };
-  const imgStyle = {
-    height: "100%",
-    width: "100%",
-    display: "block",
-    alignItem: "start",
-  };
-  const basicInfoContainer = {
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    gap: "80px",
-  };
+const imgStyle = {
+  height: "100%",
+  width: "100%",
+  display: "block",
+  alignItem: "start",
+};
 
+export function PokemonDetail() {
   const { id } = useParams();
   const pokemon = useLoaderData();
 
@@ -76,12 +54,31 @@ export function PokemonDetail() {
 
   return (
     <>
-      <p style={nameStyle}>
+      <Typography
+        variant="h2"
+        sx={{
+          fontWeight: "bold",
+          textTransform: "capitalize",
+          m: "20px 0 30px",
+        }}
+      >
         {pokemon.name}
-        <span style={idStyle}> #0{pokemon.id}</span>
-      </p>
-      <div style={basicInfoContainer}>
-        <div style={imgContainerStyle}>
+        <Box
+          component="span"
+          sx={{ /* color: "#797d83", */ fontWeight: "400", fontSize: "20px" }}
+        >
+          #0{pokemon.id}
+        </Box>
+      </Typography>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          gap: "80px",
+        }}
+      >
+        <Box sx={{ height: "400px", width: "400px" }}>
           {pokemon.sprites.other.dream_world.front_default === null ? (
             <img style={imgStyle} src={pokemon.sprites.front_default} />
           ) : (
@@ -90,14 +87,14 @@ export function PokemonDetail() {
               src={pokemon.sprites.other.dream_world.front_default}
             />
           )}
-        </div>
-        <div
-          style={{
+        </Box>
+        <Box
+          sx={{
             width: "500px",
             marginTop: "40px",
           }}
         >
-          <div>
+          <Box>
             {species.flavor_text_entries
               .filter(
                 (title) =>
@@ -105,26 +102,33 @@ export function PokemonDetail() {
                   title.language.name === "en",
               )
               .map((filteredTitle) => (
-                <Typography variant="subtitle1" sx={{}}>
+                <Typography variant="subtitle1">
                   {filteredTitle.flavor_text.replace(
                     /[^a-zA-Z0-9&\/\\#,+()$~%.'":*?<>{}é `]/g,
                     " ",
                   )}
                 </Typography>
               ))}
-          </div>
-          <div
-            style={{
+          </Box>
+          <Box
+            sx={{
               marginTop: "30px",
               height: "250px",
-              backgroundColor: "#30a7d7",
+              /* backgroundColor: "#30a7d7", */
               borderRadius: "25px",
               display: "flex",
             }}
           >
             <ul style={{ marginTop: "20px", width: "200px" }}>
               <li>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography
+                  variant="h6"
+                  sx={
+                    {
+                      /* color: "white" */
+                    }
+                  }
+                >
                   Height:
                 </Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
@@ -132,7 +136,14 @@ export function PokemonDetail() {
                 </Typography>
               </li>
               <li>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography
+                  variant="h6"
+                  sx={
+                    {
+                      /* color: "white" */
+                    }
+                  }
+                >
                   Weight:
                 </Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
@@ -140,7 +151,14 @@ export function PokemonDetail() {
                 </Typography>
               </li>
               <li>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography
+                  variant="h6"
+                  sx={
+                    {
+                      /* color: "white" */
+                    }
+                  }
+                >
                   Gender:
                 </Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
@@ -150,7 +168,14 @@ export function PokemonDetail() {
             </ul>
             <ul style={{ marginTop: "20px" }}>
               <li>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography
+                  variant="h6"
+                  sx={
+                    {
+                      /* color: "white" */
+                    }
+                  }
+                >
                   Abilities:
                 </Typography>
                 {pokemon.abilities.map((ability) => (
@@ -160,7 +185,14 @@ export function PokemonDetail() {
                 ))}
               </li>
               <li>
-                <Typography variant="h6" sx={{ color: "white" }}>
+                <Typography
+                  variant="h6"
+                  sx={
+                    {
+                      /* color: "white" */
+                    }
+                  }
+                >
                   Types:
                 </Typography>
                 {pokemon.types.map((number) => (
@@ -170,10 +202,10 @@ export function PokemonDetail() {
                 ))}
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div style={{ margin: "100px 0px" }}>
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ m: "100px 0px" }}>
         <BarChart
           width={1000}
           height={400}
@@ -189,9 +221,9 @@ export function PokemonDetail() {
           <YAxis />
           <XAxis dataKey="name" />
           <Tooltip />
-          <Bar dataKey="value" fill="#30a7d7" />
+          <Bar dataKey="value" /* fill="#30a7d7" */ />
         </BarChart>
-      </div>
+      </Box>
       <div>{/* evo-chain soon*/}</div>
       <div>{/* damage soon */}</div>
     </>

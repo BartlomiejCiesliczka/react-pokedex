@@ -5,17 +5,16 @@ import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 
 export function Navbar() {
   const rootLayoutNav = {
+    /* backgroundColor: "#ff1f1f", */
     borderBottom: "2px solid black",
-    /* backgroundColor: "#FF1F1F", */
   };
 
   const navButton = {
     padding: "10px 0",
     width: "160px",
-    height: "100%",
     color: "white",
     "&:focus": {
-      color: "#FBD743",
+      /* color: "#FBD743", */
     },
   };
   return (

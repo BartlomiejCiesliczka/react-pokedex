@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useParams, useLoaderData } from "react-router-dom";
 import { FetchingDetailData } from "../PokemonsList/FetchingDetailData/FetchingDetailData";
 
@@ -15,13 +16,13 @@ export function TypeData() {
 
   return (
     <>
-      <div style={ListLayout}>
+      <Box sx={ListLayout}>
         {typeData.pokemon
           .map((data) => data.pokemon.name)
           .map((name) => (
             <FetchingDetailData key={name} pokemon={name} />
           ))}
-      </div>
+      </Box>
     </>
   );
 }
