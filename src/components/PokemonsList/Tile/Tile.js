@@ -21,7 +21,7 @@ export function Tile({ pokemonData }) {
     width: "70%",
   };
   const dataContainer = {
-    backgroundColor: "#7b7b7b",
+    /* backgroundColor: "#7b7b7b", */
     border: "1px solid black",
     borderTop: "none",
     borderBottomLeftRadius: "25px",
@@ -31,12 +31,12 @@ export function Tile({ pokemonData }) {
     fontSize: "20px",
     fontWeight: "bold",
     textAlign: "center",
-    color: "white",
+    /* color: "white", */
   };
   const ID = {
     fontSize: "14px",
     textAlign: "center",
-    color: "white",
+    /* color: "white", */
   };
   const stackType = {
     display: "flex",

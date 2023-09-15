@@ -49,8 +49,10 @@ function App() {
       ...(mode === "light"
         ? {
             background: {
-              default: "#fafafa",
+              default: "#8f8f8f",
               paper: "#ffffff",
+              appbar: "#ff1f1f",
+              main: "#c7c7c7",
             },
             text: {
               primary: "#111517",
@@ -60,6 +62,8 @@ function App() {
             background: {
               default: "#333e48",
               paper: "#2b3945",
+              appbar: "#2b3945",
+              main: "#455461",
             },
             text: {
               primary: "#ffffff",

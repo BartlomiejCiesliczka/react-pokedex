@@ -4,6 +4,11 @@ import { useParams, useLoaderData } from "react-router-dom";
 import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { BarChart, Bar, YAxis, XAxis, Tooltip } from "recharts";
+import {
+  genderRate,
+  heightInMeters,
+  weightInKilograms,
+} from "../../const/DetailConversionFactor";
 
 const imgStyle = {
   height: "100%",
@@ -20,23 +25,6 @@ export function PokemonDetail() {
     return Axios.get(pokemon.species.url).then((res) => res.data);
   });
 
-  const heightInMeters = (value) => {
-    return (value / 10).toFixed(2);
-  };
-
-  const weightInKilograms = (value) => {
-    return (value / 10).toFixed(2);
-  };
-
-  const genderRate = (value) => {
-    if (value === -1) {
-      return "genderless";
-    }
-    const female = (value / 8) * 100;
-    const male = 100 - female;
-
-    return [`Male: ` + male + `%, `, `Female: ` + female + `%`];
-  };
   const dataset = [];
   const pushDataset = () => {
     pokemon.stats.map((stat) => {
@@ -65,7 +53,7 @@ export function PokemonDetail() {
         {pokemon.name}
         <Box
           component="span"
-          sx={{ /* color: "#797d83", */ fontWeight: "400", fontSize: "20px" }}
+          sx={{ color: "#797d83", fontWeight: "400", fontSize: "20px" }}
         >
           #0{pokemon.id}
         </Box>
@@ -114,53 +102,26 @@ export function PokemonDetail() {
             sx={{
               marginTop: "30px",
               height: "250px",
-              /* backgroundColor: "#30a7d7", */
+              backgroundColor: "background.default",
               borderRadius: "25px",
               display: "flex",
             }}
           >
             <ul style={{ marginTop: "20px", width: "200px" }}>
               <li>
-                <Typography
-                  variant="h6"
-                  sx={
-                    {
-                      /* color: "white" */
-                    }
-                  }
-                >
-                  Height:
-                </Typography>
+                <Typography variant="h6">Height:</Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
                   {heightInMeters(pokemon.height)}m
                 </Typography>
               </li>
               <li>
-                <Typography
-                  variant="h6"
-                  sx={
-                    {
-                      /* color: "white" */
-                    }
-                  }
-                >
-                  Weight:
-                </Typography>
+                <Typography variant="h6">Weight:</Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
                   {weightInKilograms(pokemon.weight)}kg
                 </Typography>
               </li>
               <li>
-                <Typography
-                  variant="h6"
-                  sx={
-                    {
-                      /* color: "white" */
-                    }
-                  }
-                >
-                  Gender:
-                </Typography>
+                <Typography variant="h6">Gender:</Typography>
                 <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
                   {genderRate(species.gender_rate)}{" "}
                 </Typography>
@@ -168,16 +129,7 @@ export function PokemonDetail() {
             </ul>
             <ul style={{ marginTop: "20px" }}>
               <li>
-                <Typography
-                  variant="h6"
-                  sx={
-                    {
-                      /* color: "white" */
-                    }
-                  }
-                >
-                  Abilities:
-                </Typography>
+                <Typography variant="h6">Abilities:</Typography>
                 {pokemon.abilities.map((ability) => (
                   <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
                     {ability.ability.name}
@@ -185,16 +137,7 @@ export function PokemonDetail() {
                 ))}
               </li>
               <li>
-                <Typography
-                  variant="h6"
-                  sx={
-                    {
-                      /* color: "white" */
-                    }
-                  }
-                >
-                  Types:
-                </Typography>
+                <Typography variant="h6">Types:</Typography>
                 {pokemon.types.map((number) => (
                   <Typography variant="subtitle1" sx={{ paddingLeft: "5px" }}>
                     {number.type.name}
@@ -221,7 +164,7 @@ export function PokemonDetail() {
           <YAxis />
           <XAxis dataKey="name" />
           <Tooltip />
-          <Bar dataKey="value" /* fill="#30a7d7" */ />
+          <Bar dataKey="value" fill="#8f8f8f" />
         </BarChart>
       </Box>
       <div>{/* evo-chain soon*/}</div>

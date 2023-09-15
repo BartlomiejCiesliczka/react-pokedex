@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Tile } from "../Tile/Tile";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";

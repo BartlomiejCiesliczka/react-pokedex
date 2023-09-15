@@ -1,4 +1,4 @@
-import { ListFetcher } from "../components/PokemonsList/ListLayout/ListFetcher";
+import { ListFetcher } from "../components/PokemonsList/ListFetcher/ListFetcher";
 export function Pokedex({}) {
   return (
     <>
